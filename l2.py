@@ -1,4 +1,6 @@
 import pandas as pd
+from sklearn.datasets import fetch_20newsgroups
+
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
@@ -7,7 +9,9 @@ from sklearn.metrics import accuracy_score, f1_score
 # Load local CSV
 df = pd.read_csv('20newsgroups.csv')
 df = df.dropna(subset=['text', 'target'])
-
+'''data = fetch_20newsgroups(subset='all')
+X = data.data
+y = data.target'''
 X_train_text, X_test_text, y_train, y_test = train_test_split(
     df['text'], df['target'], test_size=0.2, random_state=42
 )

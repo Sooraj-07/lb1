@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -37,3 +39,11 @@ plt.plot(X_test[i, 0], ne[i], 'r')
 plt.xlabel('Average Rooms')
 plt.ylabel('House Value (hundred thousand dollars)')
 plt.show()
+
+
+'''
+data = fetch_california_housing()
+
+X = data.data[:, 2:3]   # AveRooms (3rd feature)
+y = data.target        # Target
+'''

@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.datasets import load_iris
+
 from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
@@ -42,3 +44,11 @@ plt.xlabel("Petal Length (scaled)")
 plt.ylabel("Petal Width (scaled)")
 plt.title("Linear SVM: Iris Classification")
 plt.show()
+
+
+'''
+iris = load_iris()
+X = iris.data[:, 2:4]
+y = (iris.target == 0).astype(int)
+
+'''

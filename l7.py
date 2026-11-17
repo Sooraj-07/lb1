@@ -1,4 +1,6 @@
 import pandas as pd
+from sklearn.datasets import load_diabetes
+
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
@@ -34,3 +36,12 @@ for name, model in models.items():
         print("Best Parameters:", model.best_params_)
     print("MSE:", mean_squared_error(y_test, pred))
     print("R2 Score:", r2_score(y_test, pred))
+
+
+
+    '''
+    data = load_diabetes()
+X = data.data
+y= data.target
+    
+    '''
